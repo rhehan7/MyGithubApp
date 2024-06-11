@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">My Github App</string>
+    <string name="user_picture_text">user picture</string>
+    <string name="username_text">Username</string>
+    <string name="searchbar_hint">mau kepoin siapa hari ini?</string>
+    <string name="user_picture_detail_text">User picture detail</string>
+    <string name="name_user_text">Name of user</string>
+    <string name="followers_text">%1$d Followers</string>
+    <string name="following_text">%1$d Following</string>
+    <string name="tab_text_1">Followers</string>
+    <string name="tab_text_2">Following</string>
+    <string name="favorite_user_empty">Favorite User Empty</string>
+    <string name="dark_mode">Dark Mode</string>
+
+    <style name="follow_style">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">3dp</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:gravity">center</item>
+    </style>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="theme_setting_text">theme setting</string>
+    <string name="fav_menu_text">fav menu</string>
+</resources>
