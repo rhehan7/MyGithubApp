@@ -1,6 +1,7 @@
 package com.dicoding.mygithubapp.ui.detail
 
 import android.os.Bundle
+import android.util.TypedValue
 import android.view.View
 import androidx.activity.viewModels
 import androidx.annotation.StringRes
@@ -49,7 +50,21 @@ class DetailActivity : AppCompatActivity() {
         observeViewModel()
         // Setup SectionsPagerAdapter and TabLayoutMediator
         setupViewPagerAndTabs(username)
+        // setting status bar & navbar color
+        setStatusAndNavBarColor()
+    }
 
+    private fun setStatusAndNavBarColor() {
+        val typedValue = TypedValue()
+        theme.resolveAttribute(com.google.android.material.R.attr.colorPrimary, typedValue, true)
+        val color = typedValue.data
+
+        val typedValue2 = TypedValue()
+        theme.resolveAttribute(com.google.android.material.R.attr.colorSurface, typedValue, true)
+        val color2 = typedValue2.data
+
+        window.statusBarColor = color
+        window.navigationBarColor = color2
     }
 
 

@@ -15,6 +15,14 @@
         android:theme="@style/Theme.MyGithubApp"
         tools:targetApi="31">
         <activity
+            android:name=".ui.main.SplashScreenActivity"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter></activity>
+        <activity
             android:name=".ui.setting.SettingActivity"
             android:exported="false" />
         <activity
@@ -25,17 +33,12 @@
             android:exported="false" />
         <activity
             android:name=".ui.main.MainActivity"
-            android:exported="true"
-            android:theme="@style/SplashScreenTheme">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            android:exported="false">
         </activity>
+
         <meta-data
             android:name="API_KEY"
-            android:value="${API_KEY"/>
+            android:value="${API_KEY" />
     </application>
 
 </manifest>

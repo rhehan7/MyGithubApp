@@ -5,10 +5,11 @@
     android:id="@+id/item_view"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:padding="12dp"
     android:layout_gravity="center"
     android:layout_marginTop="2dp"
-    android:layout_marginBottom="2dp">
+    android:layout_marginBottom="2dp"
+    android:background="@drawable/bg_item"
+    android:padding="12dp">
 
     <ImageView
         android:id="@+id/img_user_picture"
@@ -26,6 +27,7 @@
         android:layout_height="match_parent"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="8dp"
+        android:textColor="?attr/colorOnSurface"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="@+id/img_user_picture"
         app:layout_constraintEnd_toEndOf="parent"

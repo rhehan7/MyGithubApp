@@ -1,6 +1,7 @@
 package com.dicoding.mygithubapp.ui.setting
 
 import android.os.Bundle
+import android.util.TypedValue
 import android.widget.CompoundButton
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
@@ -31,5 +32,20 @@ class SettingActivity : AppCompatActivity() {
         binding.switchTheme.setOnCheckedChangeListener { _: CompoundButton?, isChecked: Boolean ->
             settingViewModel.saveThemeSetting(isChecked)
         }
+        // setting status bar & navbar color
+        setStatusAndNavBarColor()
+    }
+
+    private fun setStatusAndNavBarColor() {
+        val typedValue = TypedValue()
+        theme.resolveAttribute(com.google.android.material.R.attr.colorPrimary, typedValue, true)
+        val color = typedValue.data
+
+        val typedValue2 = TypedValue()
+        theme.resolveAttribute(com.google.android.material.R.attr.colorSurface, typedValue, true)
+        val color2 = typedValue2.data
+
+        window.statusBarColor = color
+        window.navigationBarColor = color2
     }
 }

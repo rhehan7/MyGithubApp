@@ -2,14 +2,13 @@ package com.dicoding.mygithubapp.ui.main
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.TypedValue
 import android.view.View
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
-import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.lifecycle.ViewModelProvider
-import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.dicoding.mygithubapp.R
 import com.dicoding.mygithubapp.data.remote.response.UsersGithubItem
@@ -28,8 +27,6 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        // handle splash screen
-        installSplashScreen()
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         // set screen on recycleview
@@ -42,6 +39,21 @@ class MainActivity : AppCompatActivity() {
         showItemMenu()
         // get theme setting
         getThemeSetting()
+        // setting status bar & navbar color
+        setStatusAndNavBarColor()
+    }
+
+    private fun setStatusAndNavBarColor() {
+        val typedValue = TypedValue()
+        theme.resolveAttribute(com.google.android.material.R.attr.colorPrimary, typedValue, true)
+        val color = typedValue.data
+
+        val typedValue2 = TypedValue()
+        theme.resolveAttribute(com.google.android.material.R.attr.colorSurface, typedValue, true)
+        val color2 = typedValue2.data
+
+        window.statusBarColor = color
+        window.navigationBarColor = color2
     }
 
     private fun getThemeSetting() {
@@ -131,11 +143,11 @@ class MainActivity : AppCompatActivity() {
     private fun setUpRecyclerView() {
         val layoutManager = LinearLayoutManager(this)
         // inisialisation divider to each item on recycler view
-        val itemDecoration = DividerItemDecoration(this, layoutManager.orientation)
+        // val itemDecoration = DividerItemDecoration(this, layoutManager.orientation)
         with(binding) {
             rvUserGithub.layoutManager = layoutManager
             rvUserGithub.setHasFixedSize(true)
-            rvUserGithub.addItemDecoration(itemDecoration) // add divider
+            // rvUserGithub.addItemDecoration(itemDecoration) // add divider
         }
     }
 
